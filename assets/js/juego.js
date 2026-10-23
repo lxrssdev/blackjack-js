@@ -26,6 +26,15 @@ const createDeck = () => {
 
 createDeck();
 
+const hitCard = () => {
+    if(deck.length === 0){
+        throw 'No hay mas cartas en el zapato!';
+    }
+    return deck.pop();
+    
+}
+
+
 
 
 
