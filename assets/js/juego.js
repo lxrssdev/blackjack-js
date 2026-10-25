@@ -27,13 +27,27 @@ const createDeck = () => {
 createDeck();
 
 const hitCard = () => {
+    let card = deck.pop();
     if(deck.length === 0){
         throw 'No hay mas cartas en el zapato!';
     }
-    return deck.pop();
+    return card;
     
 }
+const cardValue = (card) =>  {
 
+    const value = card.substring(0, card.length-1);
+    if(isNaN(value)){
+        if(value === 'A'){
+            return 11;
+        }else{
+            return 10;
+        }
+    }else{
+        return value * 1;
+    }
+    
+}
 
 
 
