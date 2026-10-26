@@ -50,13 +50,26 @@ const cardValue = (card) =>  {
 }
 
 //events
+
+const screenPoints = document.querySelectorAll('strong'); 
 const hitButton = document.querySelector('#hit');
+const screenPlayerPoints = document.querySelector('#player-cards');
+let cardImage = document.querySelector('img');
+
 let playerPoints = 0, computerPoints = 0;
+
 hitButton.addEventListener('click', () => {
-    
+    //card hitted
     const card = hitCard();
+    const screenCard = document.createElement('img');
+    screenCard.src = `assets/cartas/${card}.png`;
+    screenCard.classList.add('card');
+    screenPlayerPoints.append(screenCard);
+    // console.log(card);
+    //new card to add to screen
+
     playerPoints += cardValue(card);
-    console.log(playerPoints);
+    screenPoints[0].innerText = playerPoints;
 
 });
 
