@@ -49,6 +49,17 @@ const cardValue = (card) =>  {
     
 }
 
+//events
+const hitButton = document.querySelector('#hit');
+let playerPoints = 0, computerPoints = 0;
+hitButton.addEventListener('click', () => {
+    
+    const card = hitCard();
+    playerPoints += cardValue(card);
+    console.log(playerPoints);
+
+});
+
 
 
 
